@@ -17,8 +17,8 @@ class Comics extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->decimal('price', 65, 2);
-            $table->string('isbn');
-            $table->integer('stock');
+            $table->string('isbn')->default(0);
+            $table->integer('stock')->default(0);
             $table->string('writer');
             $table->timestamps();
         });
