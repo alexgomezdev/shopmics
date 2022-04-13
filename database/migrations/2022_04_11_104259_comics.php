@@ -20,7 +20,9 @@ class Comics extends Migration
             $table->string('isbn')->default(0);
             $table->integer('stock')->default(0);
             $table->string('writer');
+            $table->boolean('marvel');
             $table->timestamps();
+            
         });
     }
 
