@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Comic;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,13 @@ Route::get('/', function () {
 });
 
 Route::resource('comics', ComicController::class);
+
+Route::post('compare', 'ComicController@compare');
+/*
+Route::post('compare', function(Request $request) {
+    dd($request);
+    $comics = Comic::paginate();
+    return view('comic.index', compact('comics'))
+    ->with('i', (request()->input('page', 1) - 1) * $comics->perPage());
+});
+*/

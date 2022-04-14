@@ -18,6 +18,7 @@ class ComicController extends Controller
      */
     public function index()
     {
+       
         $comics = Comic::paginate();
 
         return view('comic.index', compact('comics'))
@@ -43,10 +44,11 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        $request -> merge([
+            'marvel' => $request->marvel ? 1 : 0,
+        ]);
         request()->validate(Comic::$rules);
-
         $comic = Comic::create($request->all());
-
         return redirect()->route('comics.index')
             ->with('success', 'Comic created successfully.');
     }
@@ -105,5 +107,13 @@ class ComicController extends Controller
 
         return redirect()->route('comics.index')
             ->with('success', 'Comic deleted successfully');
+    }
+
+    public function compare(Request $request)
+    {
+        dd($request);
+        $comics = Comic::paginate();
+        return view('comic.index', compact('comics'))
+        ->with('i', (request()->input('page', 1) - 1) * $comics->perPage());
     }
 }

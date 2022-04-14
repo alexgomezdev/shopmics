@@ -27,7 +27,7 @@ class Comic extends Model
 		'price' => 'required',
 		'isbn' => 'required',
 		'stock' => 'required',
-		'writer' => 'required',
+    'marvel' => 'required',
     ];
 
     protected $perPage = 20;
@@ -37,7 +37,7 @@ class Comic extends Model
      *
      * @var array
      */
-    protected $fillable = ['title','price','isbn','stock','writer'];
+    protected $fillable = ['title','price','isbn','stock','marvel'];
 
 
 
