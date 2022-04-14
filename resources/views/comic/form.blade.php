@@ -22,9 +22,9 @@
             {!! $errors->first('stock', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('writer') }}
-            {{ Form::text('writer', $comic->writer, ['class' => 'form-control' . ($errors->has('writer') ? ' is-invalid' : ''), 'placeholder' => 'Writer']) }}
-            {!! $errors->first('writer', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('marvel') }}
+            {{ Form::checkbox('marvel', $comic->marvel, ['class' => 'form-control' . ($errors->has('marvel') ? ' is-invalid' : ''), 'placeholder' => 'marvel']) }}
+            {!! $errors->first('marvel', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
     </div>

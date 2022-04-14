@@ -20,7 +20,7 @@
                                 <a href="{{ route('comics.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
-                                <a href="{{ route('comics.create') }}"  class="btn btn-primary btn-sm float-right mr-4"  data-placement="left">
+                                <a class="btn btn-primary btn-sm float-right mr-4" id='compareBtn'  data-placement="left">
                                   {{ __('Compare comics') }}
                                 </a>
                               </div>
