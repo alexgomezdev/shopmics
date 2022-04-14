@@ -19,7 +19,6 @@ class Comics extends Migration
             $table->decimal('price', 65, 2);
             $table->string('isbn')->default(0);
             $table->integer('stock')->default(0);
-            $table->string('writer');
             $table->integer('marvel');
             $table->timestamps();
             
