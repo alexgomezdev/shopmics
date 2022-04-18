@@ -17,10 +17,13 @@ class Comics extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->decimal('price', 65, 2);
-            $table->string('isbn')->default(0);
+            $table->string('isbn')->nullable()->unique();
             $table->integer('stock')->default(0);
             $table->integer('marvel');
             $table->timestamps();
+            $table->string('ean')->nullable()->unique();
+            $table->string('issn')->nullable()->unique();
+            $table->string('upc')->nullable()->unique();
             
         });
     }
