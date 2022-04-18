@@ -109,11 +109,5 @@ class ComicController extends Controller
             ->with('success', 'Comic deleted successfully');
     }
 
-    public function compare(Request $request)
-    {
-        dd($request);
-        $comics = Comic::paginate();
-        return view('comic.index', compact('comics'))
-        ->with('i', (request()->input('page', 1) - 1) * $comics->perPage());
-    }
+    
 }
