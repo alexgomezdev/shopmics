@@ -45,6 +45,10 @@
 										<th>Isbn</th>
 										<th>Stock</th>
 										<th>Writer</th>
+                                        <th>Isnn</th>
+                                        <th>UPC</th>
+                                        <th>EAN</th>
+
 
                                         <th></th>
                                     </tr>
@@ -59,6 +63,10 @@
 											<td>{{ $comic->isbn }}</td>
 											<td>{{ $comic->stock }}</td>
 											<td>{{ $comic->writer }}</td>
+                                            <td>{{ $comic->isnn }}</td>
+                                            <td>{{ $comic->upc }}</td>
+                                            <td>{{ $comic->ean }}</td>
+
 
                                             <td>
                                                 <form action="{{ route('comics.destroy',$comic->id) }}" method="POST">

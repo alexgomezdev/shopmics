@@ -22,9 +22,24 @@
             {!! $errors->first('stock', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('marvel') }}
-            {{ Form::checkbox('marvel', $comic->marvel, ['class' => 'form-control' . ($errors->has('marvel') ? ' is-invalid' : ''), 'placeholder' => 'marvel']) }}
-            {!! $errors->first('marvel', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('isbn') }}
+            {{ Form::text('isbn', $comic->stock, ['class' => 'form-control' . ($errors->has('isbn') ? ' is-invalid' : ''), 'placeholder' => 'Isbn']) }}
+            {!! $errors->first('isbn', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
+            {{ Form::label('issn') }}
+            {{ Form::text('issn', $comic->stock, ['class' => 'form-control' . ($errors->has('issn') ? ' is-invalid' : ''), 'placeholder' => 'Issn']) }}
+            {!! $errors->first('issn', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
+            {{ Form::label('ean') }}
+            {{ Form::text('ean', $comic->stock, ['class' => 'form-control' . ($errors->has('ean') ? ' is-invalid' : ''), 'placeholder' => 'Ean']) }}
+            {!! $errors->first('ean', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
+            {{ Form::label('upc') }}
+            {{ Form::text('upc', $comic->stock, ['class' => 'form-control' . ($errors->has('upc') ? ' is-invalid' : ''), 'placeholder' => 'Upc']) }}
+            {!! $errors->first('upc', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
     </div>
