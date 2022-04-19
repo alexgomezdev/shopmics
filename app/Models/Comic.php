@@ -24,10 +24,11 @@ class Comic extends Model
     
     static $rules = [
 		'title' => 'required',
-		'price' => 'required',
-		'isbn' => 'required',
-		'stock' => 'required',
-    'marvel' => 'required',
+		//'isbn' => 'required',
+    'stock' => 'required',
+		//'issn' => 'required',
+    //'ean' => 'required',
+		//'upc' => 'required',
     ];
 
     protected $perPage = 20;
@@ -37,7 +38,7 @@ class Comic extends Model
      *
      * @var array
      */
-    protected $fillable = ['title','price','isbn','stock','marvel'];
+    protected $fillable = ['title','stock','isbn','issn','ean','upc'];
 
 
 
