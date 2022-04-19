@@ -7,11 +7,6 @@
             {!! $errors->first('title', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('price') }}
-            {{ Form::text('price', $comic->price, ['class' => 'form-control' . ($errors->has('price') ? ' is-invalid' : ''), 'placeholder' => 'Price']) }}
-            {!! $errors->first('price', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
             {{ Form::label('isbn') }}
             {{ Form::text('isbn', $comic->isbn, ['class' => 'form-control' . ($errors->has('isbn') ? ' is-invalid' : ''), 'placeholder' => 'Isbn']) }}
             {!! $errors->first('isbn', '<div class="invalid-feedback">:message</div>') !!}

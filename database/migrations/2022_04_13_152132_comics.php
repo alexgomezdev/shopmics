@@ -16,7 +16,6 @@ class Comics extends Migration
         Schema::create('comics', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->decimal('price', 65, 2);
             $table->string('isbn')->nullable()->unique();
             $table->integer('stock')->default(0);
             $table->timestamps();

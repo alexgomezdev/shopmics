@@ -41,10 +41,8 @@
                                         <th>No</th>
                                         
 										<th>Title</th>
-										<th>Price</th>
 										<th>Isbn</th>
 										<th>Stock</th>
-										<th>Writer</th>
                                         <th>Isnn</th>
                                         <th>UPC</th>
                                         <th>EAN</th>
@@ -59,10 +57,8 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $comic->title }}</td>
-											<td>{{ $comic->price }}</td>
 											<td>{{ $comic->isbn }}</td>
 											<td>{{ $comic->stock }}</td>
-											<td>{{ $comic->writer }}</td>
                                             <td>{{ $comic->isnn }}</td>
                                             <td>{{ $comic->upc }}</td>
                                             <td>{{ $comic->ean }}</td>
