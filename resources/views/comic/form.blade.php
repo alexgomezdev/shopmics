@@ -17,11 +17,6 @@
             {!! $errors->first('stock', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('isbn') }}
-            {{ Form::text('isbn', $comic->stock, ['class' => 'form-control' . ($errors->has('isbn') ? ' is-invalid' : ''), 'placeholder' => 'Isbn']) }}
-            {!! $errors->first('isbn', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
             {{ Form::label('issn') }}
             {{ Form::text('issn', $comic->stock, ['class' => 'form-control' . ($errors->has('issn') ? ' is-invalid' : ''), 'placeholder' => 'Issn']) }}
             {!! $errors->first('issn', '<div class="invalid-feedback">:message</div>') !!}

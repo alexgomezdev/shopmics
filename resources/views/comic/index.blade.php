@@ -59,7 +59,7 @@
 											<td>{{ $comic->title }}</td>
 											<td>{{ $comic->isbn }}</td>
 											<td>{{ $comic->stock }}</td>
-                                            <td>{{ $comic->isnn }}</td>
+                                            <td>{{ $comic->issn }}</td>
                                             <td>{{ $comic->upc }}</td>
                                             <td>{{ $comic->ean }}</td>
 
