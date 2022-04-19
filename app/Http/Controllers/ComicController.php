@@ -44,10 +44,9 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $request -> merge([
-            'marvel' => $request->marvel ? 1 : 0,
-        ]);
+       
         request()->validate(Comic::$rules);
+        
         $comic = Comic::create($request->all());
         return redirect()->route('comics.index')
             ->with('success', 'Comic created successfully.');
