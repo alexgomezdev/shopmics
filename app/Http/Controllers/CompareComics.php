@@ -9,18 +9,9 @@ use DB;
 class CompareComics extends Controller  
 {
     public function store(Request $request){
-    //$comics = Comic::paginate();
     $marvelcomics=json_decode($request->getContent())->results;
-    $prueba = collect($marvelcomics[1])->only(['title', 'isbn', 'issn', 'ean','upc'])->toArray();
-    //DB::table('comics')->insertOrIgnore(collect($mcomic)->only(['title', 'isbn', 'issn', 'ean','upc'])->toArray());
-    $xd =  [
-        ['title' => 'Marvel Previews (2017)', 'isbn' => 'wsadad', 'ean' => 'wadawd', 'upc' => 'wdaad', 'issn' => 'dadwa'],
-        ['title' => 'Marvel Previews (2017)', 'isbn' => "null", 'ean' => null, 'upc' => '75960608839302611', 'issn' => null],
-        ['title' => 'Storm (2006)', 'isbn' => null, 'ean' => null, 'upc' => 'awdadwa', 'issn' => null]
-        ,
-      ];
-      $gh = [];
-    //array_push($xd, collect($mcomic)->only(['title', 'isbn', 'issn', 'ean','upc'])->toArray());    
+    
+    $preparedArray = [];
     foreach($marvelcomics as $mcomic){
 
         if($mcomic->ean == ""){
@@ -36,13 +27,12 @@ class CompareComics extends Controller
             $mcomic->upc = null;
         };
         $mcomicFiltred = collect($mcomic);
-        array_push($gh, collect($mcomicFiltred)->only(['title', 'isbn', 'issn', 'ean','upc'])->toArray());
+        array_push($preparedArray, collect($mcomicFiltred)->only(['title', 'isbn', 'issn', 'ean','upc'])->toArray());
     }
 
   
-    //dump($xd);                
-    //Comic::insertOrIgnore($gh);
-    DB::table('comics')->insertOrIgnore($gh);
+    
+    DB::table('comics')->insertOrIgnore($preparedArray);
 
 
 }
